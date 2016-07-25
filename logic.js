@@ -37,6 +37,9 @@ $( document ).ready(function () {
         adaugareSemn(id);
         numarCurent = "";
         break;
+      case '=':
+        toataOperatia+=numarCurent;
+        egal(toataOperatia);
     }
 
     function adaugareNum(id) {
@@ -54,12 +57,27 @@ $( document ).ready(function () {
         toataOperatia+=id;
         $("#output-small").text (toataOperatia);
       }else {
-        console.log('este else');
+
 
         toataOperatia = toataOperatia.replaceAt(toataOperatia.length-1,id);
-        console.log(toataOperatia[toataOperatia.length-1]);
+
         $("#output-small").text (toataOperatia);
       }
+
+    }
+    function egal(operatie) {
+      try {
+          operatie = eval(operatie);
+          $("#output-small").text (operatie);
+          $("#output-big").text (operatie);
+          numarCurent = "";
+          toataOperatia = "";
+      } catch (e) {
+        $("#output-small").text ("undefined");
+        $("#output-big").text("undefined");
+      }
+
+
 
     }
 
