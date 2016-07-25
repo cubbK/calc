@@ -1,6 +1,11 @@
 .btn {
   text-align: center;
 }
-.big-inside{
-  font-size: 200px;
+.output{
+  color:white;
+  background-color: #727373;
+  min-height: 4em;
+}
+.calc-back{
+  background-color:#a8a8a8;
 }
